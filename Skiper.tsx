@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useEffect } from "react";
 import { View, Text } from "react-native";
 import { retryWhen, tap, delay } from "rxjs/operators";
-import { Observable } from "rxjs";
 
 // Import services
 import { WebsocketService as Websocket } from "./src/services/websocket.service";
