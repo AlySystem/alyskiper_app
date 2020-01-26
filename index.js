@@ -1,5 +1,5 @@
 import { AppRegistry } from 'react-native'
-import App from './App'
+import Skiper from './Skiper'
 import { name as appName } from './app.json'
 
-AppRegistry.registerComponent(appName, () => App)
+AppRegistry.registerComponent(appName, () => Skiper)
