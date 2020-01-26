@@ -1,15 +1,18 @@
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RouteProp } from "@react-navigation/core";
+import { DrawerNavigationProp } from "@react-navigation/drawer";
 
 // Import types
 import {
   PublicNavigatorParams,
-  GuardsNavigatorParams
-} from "src/models/types/routes";
+  GuardsNavigatorParams,
+  GuardsNavigatorDrawerParams
+} from "../types/routes";
 
 // Import enums
-import { AppRoute } from "src/models/enum/routes";
+import { AppRoute } from "../enum/routes";
 
+// PUBLIC
 export interface WelcomeScreenProps {
   navigation: StackNavigationProp<
     PublicNavigatorParams,
@@ -42,11 +45,38 @@ export interface ResetPasswordScreenProps {
   route: RouteProp<PublicNavigatorParams, AppRoute.RESET_PASSWORD_SCREEN>;
 }
 
-export interface HomeScreenProps {
-  navigation: StackNavigationProp<GuardsNavigatorParams, AppRoute.HOME_CREEN>;
-  route: RouteProp<GuardsNavigatorParams, AppRoute.HOME_CREEN>;
+export interface SplashScreenProps {
+  navigation: StackNavigationProp<
+    PublicNavigatorParams,
+    AppRoute.SPLASH_SCREEN
+  >;
+  route: RouteProp<PublicNavigatorParams, AppRoute.SPLASH_SCREEN>;
 }
 
+// GUARDS -----------------------------------------------------------
+
+// DRAWER
+export interface HomeDrawerProps {
+  navigation: DrawerNavigationProp<
+    GuardsNavigatorDrawerParams,
+    AppRoute.HOME_SCREEN
+  >;
+}
+
+export interface ProfileScreenProps {
+  navigation: StackNavigationProp<
+    GuardsNavigatorDrawerParams,
+    AppRoute.PROFILE_SCREEN
+  >;
+}
+
+// STACKS
+export interface HomeScreenProps {
+  navigation: StackNavigationProp<GuardsNavigatorParams, AppRoute.HOME_SCREEN>;
+  route: RouteProp<GuardsNavigatorParams, AppRoute.HOME_SCREEN>;
+}
+
+// TRANSPORT
 export interface MapViewScreenProps {
   navigation: StackNavigationProp<
     GuardsNavigatorParams,

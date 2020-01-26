@@ -3,20 +3,20 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 // IMPORT MODELS
 // Import types
-import { PublicNavigatorParams } from "src/models/types/routes";
+import { PublicNavigatorParams } from "../../models/types/routes";
 
 // Import enums
-import { AppRoute } from "src/models/enum/routes";
+import { AppRoute } from "../../../src/models/enum/routes";
 
 // Import screens
-import WelcomeScreen from "src/screens/public/WelcomeScreen";
-import SignInScreen from "src/screens/public/SignInScreen";
-import SignUpScreen from "src/screens/public/SignUpScreen";
-import ResetPasswordScreen from "src/screens/public/ResetPasswordScreen";
+import WelcomeScreen from "../../screens/public/WelcomeScreen";
+import SignInScreen from "../../screens/public/SignInScreen";
+import SignUpScreen from "../../screens/public/SignUpScreen";
+import ResetPasswordScreen from "../../screens/public/ResetPasswordScreen";
 
 const Stack = createStackNavigator<PublicNavigatorParams>();
 
-export function GuardsStack(): ReactElement {
+export function PublicStack(): ReactElement {
   return (
     <Stack.Navigator>
       <Stack.Screen name={AppRoute.WELCOME_SCREEN} component={WelcomeScreen} />
